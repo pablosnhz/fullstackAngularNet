@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\orientadoObjetos\\OrientadoObjetos.csproj": {}
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\OrientadoObjetos\\OrientadoObjetos.csproj": {}
   },
   "projects": {
-    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\orientadoObjetos\\OrientadoObjetos.csproj": {
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\OrientadoObjetos\\OrientadoObjetos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\orientadoObjetos\\OrientadoObjetos.csproj",
+        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\OrientadoObjetos\\OrientadoObjetos.csproj",
         "projectName": "OrientadoObjetos",
-        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\orientadoObjetos\\OrientadoObjetos.csproj",
+        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\OrientadoObjetos\\OrientadoObjetos.csproj",
         "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
-        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\orientadoObjetos\\obj\\",
+        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\OrientadoObjetos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
