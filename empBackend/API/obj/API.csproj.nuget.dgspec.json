@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj": {}
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj": {
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj",
+        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj",
+        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
-        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\obj\\",
+        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +27,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
+                "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -69,6 +73,66 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+        "projectName": "Infraestructura",
+        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+        "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
+        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

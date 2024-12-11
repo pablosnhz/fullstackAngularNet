@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wHs+ANa2PsnSq1eU6kRs8HGH83UlHD0i7VaMVKFPJetwiWgRQ0qmbKUGMPNqBL8k0kTsLzml6TO0jqcNzWWmdQ==",
+  "dgSpecHash": "ZEL1y2OiYpW5jACUVV6dL2zun7+XtLuT5hkz30Q0SgrbJMiB97/JzUuvWhBbCTiBoPxkW9ygzy/D9BrgQAcaaw==",
   "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj",
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.2\\microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
