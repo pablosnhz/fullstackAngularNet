@@ -28,6 +28,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj": {
+                "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj"
+              },
               "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
                 "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj"
               }
@@ -52,6 +55,16 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -81,14 +94,14 @@
         }
       }
     },
-    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
-        "projectName": "Infraestructura",
-        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
-        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\obj\\",
+        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,6 +134,82 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+        "projectName": "Infraestructura",
+        "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+        "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
+        "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj": {
+                "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
