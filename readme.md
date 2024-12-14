@@ -11,3 +11,10 @@ dotnet tool install --global dotnet-ef --version 6.0.7
 dotnet ef migrations add MigracionInicial -p Infraestructura -s API -o Data/Migrations
 // realizamos el update al hacer cambios automaticamente
 dotnet ef database update -p Infraestructura -s API
+
+// una vez actualizadas las tablas en sql utilizamos el comando para actualizar las peticiones en el get del swagger
+PS D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\api> dotnet run
+
+// no me actualizaba los datos de sql que agregue manualmente dentro de API program.cs faltaron datos dos datos
+builder.Services.AddControllers();
+app.MapControllers();

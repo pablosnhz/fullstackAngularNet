@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "plhbhxuVxLzZgvQGm1nKxlnzW9FgZOfrfv+WlAaOqYGGovefz2julBtrteqR9Q9Y8okwPaUnZ90k+BRAfF7jGw==",
+  "dgSpecHash": "PPP0dLq2rgN512bceDbqSnD87SFx0pM/RtwYCqLvzE9jBZ8fVmRVXWFHqqGDmGzJ+G2TGsnuEt6f5cPmhc9RwA==",
   "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj",
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\Infraestructura\\Infraestructura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
