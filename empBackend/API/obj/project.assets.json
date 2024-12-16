@@ -2465,11 +2465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\api\\API.csproj",
+      "projectUniqueName": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\api\\API.csproj",
+      "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Cipper\\.nuget\\packages\\",
-      "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\api\\obj\\",
+      "outputPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cipper\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2489,8 +2489,8 @@
             "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj": {
               "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Core\\Core.csproj"
             },
-            "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\Infraestructura\\Infraestructura.csproj": {
-              "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empbackend\\Infraestructura\\Infraestructura.csproj"
+            "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj": {
+              "projectPath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\Infraestructura\\Infraestructura.csproj"
             }
           }
         }
