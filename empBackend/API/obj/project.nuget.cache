@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PyGp+mSV2hPAw8vHk89rbfHf4vrRrlZS8qBBNARl3sDou4z35uyIcdCDJde25JwtwVvk5aQLHzCbl3QyYn8K0g==",
+  "dgSpecHash": "1ev9SGvh6rCQ9ZRThVRRvJLFFvwq+NZaoi/Y9g2vdm+L2dZQ84KcUBx0FBeZoveKbDVNz0SGui/+VMOK4QQS+w==",
   "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cipper\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.2\\microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",

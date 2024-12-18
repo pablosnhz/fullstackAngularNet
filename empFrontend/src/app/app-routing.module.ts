@@ -9,6 +9,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'compania',
+    loadChildren: () => import('./compania/compania.module').then(m => m.CompaniaModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
