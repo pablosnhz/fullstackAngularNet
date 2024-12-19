@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1ev9SGvh6rCQ9ZRThVRRvJLFFvwq+NZaoi/Y9g2vdm+L2dZQ84KcUBx0FBeZoveKbDVNz0SGui/+VMOK4QQS+w==",
+  "dgSpecHash": "/nno8xWtYBxjIrDHWx7GuOBx6B53AsARf+ppNftTToqRpCQlPnuYA6DroplS6ejTNxij+5e0SR4xFhOd31+pWQ==",
   "success": true,
-  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\api\\API.csproj",
+  "projectFilePath": "D:\\DescargasD\\proyectospersonales\\puntonetcurso\\empBackend\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Cipper\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.2\\microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",
-    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Cipper\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",

@@ -18,3 +18,8 @@ PS D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\api> dotnet run
 // no me actualizaba los datos de sql que agregue manualmente dentro de API program.cs faltaron datos dos datos
 builder.Services.AddControllers();
 app.MapControllers();
+
+// instalamos las dependencias del nuget
+AutoMapper y AutoMapper.Extensions.Microsoft
+
+<!-- antes de injectar un servicio debe estar en el program.cs -->

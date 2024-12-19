@@ -69,3 +69,5 @@ D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\
 D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\Infraestructura.dll
 D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\Infraestructura.pdb
 D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\Core.pdb
+D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\AutoMapper.dll
+D:\DescargasD\proyectospersonales\puntonetcurso\empBackend\API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
