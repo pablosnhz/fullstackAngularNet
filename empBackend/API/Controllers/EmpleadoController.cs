@@ -35,12 +35,15 @@ namespace API.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Empleado>>> GetEmpleados()
+        // traemos solo los datos de la empresa y no toda la compania cambiando de Empleado a EmpleadoReadDto
+        public async Task<ActionResult<IEnumerable<EmpleadoReadDto>>> GetEmpleados()
         {
             _logger.LogInformation("Listado de Empleados");
             // incluimos la compania con el include que pertenece a la lista principal 
             var lista = await _db.Empleado.Include(c => c.Compania).ToListAsync();
-            _response.Resultado = lista;
+            // aca empleamos en mapper para convertir de Empleado a EmpleadoReadDto
+            _response.Resultado = _mapper.Map<IEnumerable<Empleado>, IEnumerable<EmpleadoReadDto>>(lista);
+
             _response.Mensaje = "Listado de Empleados";
 
             return Ok(_response);
@@ -51,7 +54,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Empleado>> GetEmpleado(int id)
+        public async Task<ActionResult<EmpleadoReadDto>> GetEmpleado(int id)
         {
             if (id == 0)
             {
@@ -72,9 +75,24 @@ namespace API.Controllers
                 return NotFound(_response);
             }
 
-            _response.Resultado = emp;
+            _response.Resultado = _mapper.Map<Empleado, EmpleadoReadDto>(emp);
             _response.Mensaje = "Informacion del empleado " + emp.Id;
 
+            return Ok(_response);
+        }
+
+        [HttpGet]
+        // para diferenciar del httpGet que ya tenemos y queremos aplicar un get mas, lo hacemos con el route
+        [Route("EmpleadosPorCompania/{companiaId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<EmpleadoReadDto>>> GetEmpleadoPorCompania(int companiaId)
+        {
+            _logger.LogInformation("Listado de Empleados por Compania");
+            var lista = await _db.Empleado.Include(c => c.Compania)
+                .Where(e => e.CompaniaId == companiaId).ToListAsync();
+            _response.Resultado = _mapper.Map<IEnumerable<Empleado>, IEnumerable<EmpleadoReadDto>>(lista);
+            _response.IsExitoso = true;
+            _response.Mensaje = "Listado de Empleados por Compania";
             return Ok(_response);
         }
 
