@@ -6,6 +6,7 @@ using AutoMapper;
 using Core.Dto;
 using Core.Entidades;
 using Infraestructura.Data;
+using Infraestructura.Data.Repositorio.IRepositorio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,19 +17,20 @@ namespace API.Controllers
     public class EmpleadoController : ControllerBase
     {
         // aplicamos el servicio
-        private readonly ApplicationDbContext _db;
+        // private readonly ApplicationDbContext _db;
+        private readonly IUnidadTrabajo _unidadTrabajo;
         private ResponseDto _response;
         // nos avisa que estamos accediendo al log de companias
         public ILogger<EmpleadoController> _logger;
         public readonly IMapper _mapper;
 
-        public EmpleadoController(ApplicationDbContext db, ILogger<EmpleadoController> logger,
+        public EmpleadoController(IUnidadTrabajo unidadTrabajo, ILogger<EmpleadoController> logger,
             IMapper mapper
         )
         {
+            _unidadTrabajo = unidadTrabajo;
             _mapper = mapper;
             _logger = logger;
-            _db = db;
             _response = new ResponseDto();
 
         }
@@ -40,7 +42,8 @@ namespace API.Controllers
         {
             _logger.LogInformation("Listado de Empleados");
             // incluimos la compania con el include que pertenece a la lista principal 
-            var lista = await _db.Empleado.Include(c => c.Compania).ToListAsync();
+            // var lista = await _db.Empleado.Include(c => c.Compania).ToListAsync();
+            var lista = await _unidadTrabajo.Empleado.ObtenerTodos(incluirPropiedades: "Compania");
             // aca empleamos en mapper para convertir de Empleado a EmpleadoReadDto
             _response.Resultado = _mapper.Map<IEnumerable<Empleado>, IEnumerable<EmpleadoReadDto>>(lista);
 
@@ -64,7 +67,8 @@ namespace API.Controllers
                 return BadRequest(_response);
             }
             // al incluir include salto error en findAsync porque solo acepta id, solucion FirstOrDefaultAsync
-            var emp = await _db.Empleado.Include(c => c.Compania).FirstOrDefaultAsync(e => e.Id == id);
+            // var emp = await _db.Empleado.Include(c => c.Compania).FirstOrDefaultAsync(e => e.Id == id);
+            var emp = await _unidadTrabajo.Empleado.ObtenerPrimero(c => c.Id == id, incluirPropiedades: "Compania");
 
             // en el caso de que no exista el ID
             if (emp == null)
@@ -88,8 +92,9 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<EmpleadoReadDto>>> GetEmpleadoPorCompania(int companiaId)
         {
             _logger.LogInformation("Listado de Empleados por Compania");
-            var lista = await _db.Empleado.Include(c => c.Compania)
-                .Where(e => e.CompaniaId == companiaId).ToListAsync();
+            // var lista = await _db.Empleado.Include(c => c.Compania)
+            //     .Where(e => e.CompaniaId == companiaId).ToListAsync();
+            var lista = await _unidadTrabajo.Empleado.ObtenerTodos(e => e.CompaniaId == companiaId, incluirPropiedades: "Compania");
             _response.Resultado = _mapper.Map<IEnumerable<Empleado>, IEnumerable<EmpleadoReadDto>>(lista);
             _response.IsExitoso = true;
             _response.Mensaje = "Listado de Empleados por Compania";
@@ -116,8 +121,12 @@ namespace API.Controllers
             }
 
             // para saber si ya existe la compania en la base de datos y buscarla en miniscula
-            var empleadoExiste = await _db.Empleado.FirstOrDefaultAsync
-            (c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
+            // var empleadoExiste = await _db.Empleado.FirstOrDefaultAsync
+            // (c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
+            //     c.Nombres.ToLower() == empleadoDto.Nombres.ToLower()
+            // );
+            var empleadoExiste = await _unidadTrabajo.Empleado.ObtenerPrimero(
+                c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
                 c.Nombres.ToLower() == empleadoDto.Nombres.ToLower()
             );
 
@@ -131,8 +140,10 @@ namespace API.Controllers
             // aplicamos el _mapper habiendolo refactorizandolo
             Empleado empleado = _mapper.Map<Empleado>(empleadoDto);
 
-            await _db.Empleado.AddAsync(empleado);
-            await _db.SaveChangesAsync();
+            // await _db.Empleado.AddAsync(empleado);
+            // await _db.SaveChangesAsync();
+            await _unidadTrabajo.Empleado.Agregar(empleado);
+            await _unidadTrabajo.Guardar();
             return CreatedAtRoute("GetEmpleado", new { id = empleado.Id }, empleado);
         }
 
@@ -152,8 +163,13 @@ namespace API.Controllers
             }
 
             // para saber si ya existe la compania en la base de datos y buscarla en miniscula
-            var empleadoExiste = await _db.Empleado.FirstOrDefaultAsync
-            (c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
+            // var empleadoExiste = await _db.Empleado.FirstOrDefaultAsync
+            // (c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
+            //     c.Nombres.ToLower() == empleadoDto.Nombres.ToLower() &&
+            //     c.Id != empleadoDto.Id
+            // );
+            var empleadoExiste = await _unidadTrabajo.Empleado.ObtenerPrimero(
+                c => c.Apellidos.ToLower() == empleadoDto.Apellidos.ToLower() &&
                 c.Nombres.ToLower() == empleadoDto.Nombres.ToLower() &&
                 c.Id != empleadoDto.Id
             );
@@ -163,10 +179,10 @@ namespace API.Controllers
                 return BadRequest(ModelState);
             }
 
-            Compania empleado = _mapper.Map<Compania>(empleadoDto);
+            Empleado empleado = _mapper.Map<Empleado>(empleadoDto);
 
-            _db.Update(empleado);
-            await _db.SaveChangesAsync();
+            _unidadTrabajo.Empleado.Actualizar(empleado);
+            await _unidadTrabajo.Guardar();
             return Ok(empleado);
         }
 
@@ -176,13 +192,16 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Empleado>> DeleteEmpleado(int id)
         {
-            var empleado = await _db.Empleado.FindAsync(id);
+            // var empleado = await _db.Empleado.FindAsync(id);
+            var empleado = await _unidadTrabajo.Empleado.ObtenerPrimero(c => c.Id == id);
             if (empleado == null)
             {
                 return NotFound();
             }
-            _db.Empleado.Remove(empleado);
-            await _db.SaveChangesAsync();
+            // _db.Empleado.Remove(empleado);
+            // await _db.SaveChangesAsync();
+            _unidadTrabajo.Empleado.Remover(empleado);
+            await _unidadTrabajo.Guardar();
             return NoContent();
         }
     }
