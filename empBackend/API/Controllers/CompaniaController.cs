@@ -33,7 +33,6 @@ namespace API.Controllers
             _mapper = mapper;
             _logger = logger;
             _response = new ResponseDto();
-
         }
 
         [HttpGet]

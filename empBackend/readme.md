@@ -16,3 +16,11 @@ addSingleton se crea por cada solicitud y se utilizara en cada instancia, queda 
 addTransient se crea cada vez que se solicita, para estados livianos y se crea cada vez que se solicita
 
 reemplazamos en el CompaniaController los \_db por unidadTrabajo
+
+    <!-- Paginador -->
+
+'IEnumerable<Empleado>' does not contain a definition for 'MetaData' and no accessible extension method 'MetaData' accepting a first argument of type 'IEnumerable<Empleado>' could be found (are you missing a using directive or an assembly reference?)
+problemas con la metadata...
+Task<IEnumerable<T>> ObtenerTodosPaginado cambie esto de IRepositorio a
+Task<PageList<T>> ObtenerTodosPaginado
+tambien lo cambie al de Repositorio a public async Task<PagedList<T>> ObtenerTodosPaginado

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Core.Especificaciones;
 using Infraestructura.Data.Repositorio.IRepositorio;
 using Microsoft.EntityFrameworkCore;
 
@@ -61,6 +62,28 @@ namespace Infraestructura.Data.Repositorio
                 return await orderBy(query).ToArrayAsync();
             }
             return await query.ToListAsync();
+        }
+
+        public async Task<PagedList<T>> ObtenerTodosPaginado(Parametro parametro, Expression<Func<T, bool>> filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string incluirPropiedades = null)
+        {
+            IQueryable<T> query = dbSet;
+            if (filtro != null)
+            {
+                query = query.Where(filtro);
+            }
+            if (incluirPropiedades != null) // "Compania, Cargo, Departamento" separa por coma
+            {
+                foreach (var ip in incluirPropiedades.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(ip);
+                }
+            }
+            if (orderBy != null)
+            {
+                await orderBy(query).ToArrayAsync();
+                return PagedList<T>.ToPagedList(query, parametro.PageNumber, parametro.PageSize);
+            }
+            return PagedList<T>.ToPagedList(query, parametro.PageNumber, parametro.PageSize);
         }
 
         public void Remover(T entidad)

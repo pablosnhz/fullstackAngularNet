@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Core.Especificaciones;
 
 namespace Infraestructura.Data.Repositorio.IRepositorio
 {
@@ -10,6 +11,13 @@ namespace Infraestructura.Data.Repositorio.IRepositorio
     {
         // repositorio generico
         Task<IEnumerable<T>> ObtenerTodos(
+            Expression<Func<T, bool>> filtro = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            string incluirPropiedades = null // Compania,Cargo
+        );
+
+        Task<PagedList<T>> ObtenerTodosPaginado(
+            Parametro parametro,
             Expression<Func<T, bool>> filtro = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string incluirPropiedades = null // Compania,Cargo
